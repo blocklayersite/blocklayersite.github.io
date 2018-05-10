@@ -1,3 +1,49 @@
 <!doctype html>
-<title>Hello World!</title>
-<h1>Hello World!</title>
+<meta name="viewport" content="width=device-width">
+<style>
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle, #fbfbfb, #f3f3f3);
+  }
+
+  .outer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  #inner {
+    margin: auto;
+    transition: opacity 2s;
+  }
+
+  .fadeout {
+    opacity: 0;
+  }
+</style>
+<script>
+  function loadForm() {
+    var redirect = "https://docs.google.com/forms/d/e/1FAIpQLSfxDXVpHQeEwc2s8GHbdwQIHat6NFyVRtCWWy_R1mKy5E19EA/viewform?usp=sf_link";
+
+    window.location = redirect;
+  }
+
+  function handleClick(e) {
+    document.getElementById('inner').classList.add('fadeout');
+    setTimeout(loadForm, 2000);
+    e.preventDefault();
+  }
+</script>
+
+<title>blocklayer.io</title>
+<div class="outer">
+  <div id="inner">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxDXVpHQeEwc2s8GHbdwQIHat6NFyVRtCWWy_R1mKy5E19EA/viewform?usp=sf_link"
+      onclick="handleClick(event);">
+      <img src="3x5_card.png" alt="blocklayer.io" height="188" width="312">
+    </a>
+  </div>
+</div>
